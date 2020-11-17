@@ -12,23 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :name, "Name:" %><br>
+    <%= form.text_field :name %><br>
   </div>
 
   <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.label :dob, "Date of Birth:" %><br>
+    <%= form.date_select :dob, start_year: 1921, end_year: Time.now.year %><br>
   </div>
 
   <div class="field">
-    <%= form.label :dob %>
-    <%= form.date_select :dob %>
+    <%= form.label :email, "Email:" %><br>
+    <%= text_field :user, :email %><br>
   </div>
 
   <div class="field">
-    <%= form.label :password_digest %>
-    <%= form.text_field :password_digest %>
+    <%= form.label :password_digest, "Password:" %><br>
+    <%= form.password_field :password_digest %><br>
   </div>
 
   <div class="actions">
