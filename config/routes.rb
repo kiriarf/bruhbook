@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   get '/', to: "application#index"
   resources :posts do
     resources :likes
+    resources :bullshits
   end
+
   resources :users
 
   get '/', to: 'application#index'
