@@ -10,14 +10,24 @@
   </head>
 
   <body style="background-color:lightblue">
-  <!--background-image:url(asset-path('./home/russia-flag.jpg')); -->
-    <header>
-    <h1>Bruhbook<img src="https://emoji.gg/assets/emoji/1590_bruh.png" width="64px" height="64px" alt="bruh"></h1>
+
+    <!--background-image:url(asset-path('./home/russia-flag.jpg')); -->
+    <header style="text-align: center;">
+    <h1>BruhBook<img src="https://emoji.gg/assets/emoji/1590_bruh.png" width="32px" height="32px" alt="bruh logo"></h1>
     <h3>The only place to keep it real</h3>
     </header>
     <br>
     <br>
+    <section class="container">
+    <div class="left-img banner"></div>
 
-    <%= yield %>
-  </body>
+    <section class="main-content" style="text-align: center;">
+      <%= yield %>
+    </section>
+
+
+    <div class="right-img banner"></div>
+    <footer>Bruhbook &reg; 2020</footer>
+  </section>
+</body>
 </html>
