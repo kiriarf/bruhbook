@@ -22,13 +22,17 @@
   </div>
 
   <div class="field">
-    <%= form.label :email, "Email:" %><br>
-    <%= text_field :user, :email %><br>
+  <%= form.label :email, "Email:" %><br>
+    <%= text_field :user, :email %>
+    <%= form.label :email_confirmation, "Confirm Email:" %><br>
+    <%= text_field :user, :email_confirmation %>
   </div>
 
   <div class="field">
     <%= form.label :password_digest, "Password:" %><br>
     <%= form.password_field :password_digest %><br>
+    <%= form.label :password_digest_confirmation, "Confirm Password:" %><br>
+    <%= form.password_field :password_digest_confirmation %><br>
   </div>
 
   <div class="actions">
