@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get '/', to: "application#index"
-  resources :posts
+  resources :posts do
+    resources :likes
+  end
   resources :users
 
   get '/', to: 'application#index'
