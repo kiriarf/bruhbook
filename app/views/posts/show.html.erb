@@ -10,10 +10,10 @@
   <%= @post.img_url %>
 </p>
 
-<p>
+<!-- <p>
   <strong>Yes bruhs:</strong>
   <%= @post.yes_bruhs %>
-</p>
+</p> -->
 
 <p>
   <strong>Bullshit bruhs:</strong>
@@ -21,9 +21,17 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @post.user_id %>
+  <% @post.user_id %>
 </p>
+
+<%= button_to 'Yes Bruh', post_likes_path(@post), method: :post %>
+<p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+
+
+<%= button_to 'Bullshit', post_bullshits_path(@post), method: :post %>
+<p><%= @post.bullshits.count %> <%= (@post.bullshits.count) == 1 ? 'Bullshit' : 'Bullshit bruh!!!'%></p>
+
+
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

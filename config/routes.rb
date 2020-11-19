@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  # root to: 'home#index'
-  # resources :home
-  resources :posts
+  get '/', to: "application#index"
+  resources :posts do
+    resources :likes
+    resources :bullshits
+  end
+
   resources :users
+
 
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#login'

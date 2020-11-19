@@ -1,7 +1,11 @@
 class ApplicationController < ActionController::Base
 
     before_action :login_required
+    skip_before_action :login_required, :only => [:index]
 
+    def index
+    end
+  
     # #This method checks if we have a user signed in
     def login_required
       if !logged_in?
