@@ -4,14 +4,11 @@
     <title>Bruhbook</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body style="background-color:lightblue">
-
-    <!--background-image:url(asset-path('./home/russia-flag.jpg')); -->
+  <body>
     <header style="text-align: center;">
     <h1>BruhBook<img src="https://emoji.gg/assets/emoji/1590_bruh.png" width="32px" height="32px" alt="bruh logo"></h1>
     <h3>The only place to keep it real</h3>
@@ -22,7 +19,7 @@
     </div>
     <% else %>
     <div class="log-out">
-      What' up <%= @user.name %>
+      What' up <%= current_user.name %>
       <%= link_to "Log Out", logout_path, method: :delete %>
     </div>
     <%end%>
