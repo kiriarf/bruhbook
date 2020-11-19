@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
     skip_before_action :login_required, :only => [:index]
 
     def index
+      @posts = Post.all
     end
   
     # #This method checks if we have a user signed in
