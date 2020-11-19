@@ -8,9 +8,12 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     Session: <%= session[:user_id] %>
-    <%= link_to "Log In", login_path %>
-    <%= link_to "Sign Up", signup_path %>
-    <%= link_to "Log Out", logout_path, method: :delete %>
+    <% if !logged_in? %>
+      <%= link_to "Log In", login_path %>
+      <%= link_to "Sign Up", signup_path %>
+    <% else %>
+      <%= link_to "Log Out", logout_path, method: :delete %>
+    <%end%>
   </head>
 
   <body style="background-color:lightblue">
