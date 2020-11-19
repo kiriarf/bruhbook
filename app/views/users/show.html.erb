@@ -1,3 +1,7 @@
+<h1><%= current_user.name %>'s Profile</h1>
+
+
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -15,10 +19,6 @@
   <%= @user.dob %>
 </p>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
