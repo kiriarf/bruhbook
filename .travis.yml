@@ -5,8 +5,8 @@ script:
   - bundle install
   - nvm install node
   - node -v
-  - npm i -g yarn
-  - yarn
+  # - npm i -g yarn
+  # - yarn
   - bundle exec rake db:create
   - bundle exec rake db:migrate
   - bundle exec rails webpacker:compile
