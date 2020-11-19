@@ -9,7 +9,8 @@
   </head>
 
   <body>
-    <header style="text-align: center;">
+  
+    <header>
     <h1>BruhBook<img src="https://emoji.gg/assets/emoji/1590_bruh.png" width="32px" height="32px" alt="bruh logo"></h1>
     <h3>The only place to keep it real</h3>
     <div class="login">
@@ -23,22 +24,23 @@
       <%= link_to "Log Out", logout_path, method: :delete %>
     </div>
     <%end%>
-    
-      
-
     </header>
 
     
     <section class="container">
     <div class="left-img banner"></div>
 
-    <section class="main-content" style="text-align: center;">
+    <section class="main-content">
       <%= yield %>
     </section>
 
 
     <div class="right-img banner"></div>
     <footer>Bruhbook &reg; 2020</footer>
+
+
   </section>
+
+
 </body>
 </html>
