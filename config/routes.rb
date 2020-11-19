@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/', to: "application#index"
+  root to: "application#index"
   resources :posts do
     resources :likes
     resources :bullshits

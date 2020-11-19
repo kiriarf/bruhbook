@@ -20,20 +20,9 @@
     <%= form.text_field :img_url %>
   </div>
 
-  <div class="field">
-    <% form.label :yes_bruhs %>
-    <% form.number_field :yes_bruhs %>
-  </div>
-
-  <div class="field">
-    <% form.label :bullshit_bruhs %>
-    <% form.number_field :bullshit_bruhs %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
+  <div class="hidden-field">
+    <%= hidden_field_tag "post[user_id]", current_user.id %>
+  </div> 
 
   <div class="actions">
     <%= form.submit %>
