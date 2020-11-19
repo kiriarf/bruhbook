@@ -1,4 +1,4 @@
-class BullshitController < ApplicationController
+class BullshitsController < ApplicationController
   before_action :find_post
   def create
     @post.bullshits.create(user_id: current_user.id)
