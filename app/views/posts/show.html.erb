@@ -1,37 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Text content:</strong>
-  <%= @post.text_content %>
-</p>
+<div class="single-post">
 
-<p>
-  <strong>Img url:</strong>
-  <%= @post.img_url %>
-</p>
+  <p><strong>Text: </strong>
+    <%= @post.text_content %>
+  </p>
 
-<!-- <p>
-  <strong>Yes bruhs:</strong>
-  <%= @post.yes_bruhs %>
-</p> -->
-
-<%# <p>
-  <strong>Bullshit bruhs:</strong>
-  <%= @post.bullshit_bruhs %>
-<%# </p> %>
-
-<p>
-  <% @post.user_id %>
-</p>
-
-<%= button_to 'Yes Bruh', post_likes_path(@post), method: :post %>
-<p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+  <p><strong>Picture:</strong>
+    <%= @post.img_url %>
+  </p>
 
 
-<%= button_to 'Bullshit', post_bullshits_path(@post), method: :post %>
-<p><%= @post.bullshits.count %> <%= (@post.bullshits.count) == 1 ? 'Bullshit' : 'Bullshit bruh!!!'%></p>
+  <p><strong>Posted By: </strong>
+    <% user = User.find(@post.user_id)%>
+    <%= user.name %>
+  </p>
 
+  <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+  <p><%= @post.bullshits.count %> <%= (@post.bullshits.count) == 1 ? 'Bullshit' : 'Bullshits bruh!!!'%></p>
 
+  <%= button_to 'Yes Bruh', post_likes_path(@post), method: :post %>
+  <%= button_to 'Bullshit', post_bullshits_path(@post), method: :post %>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+  <%= link_to 'Edit', edit_post_path(@post) %>
+</div>
