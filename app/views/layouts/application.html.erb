@@ -10,8 +10,15 @@
 
   <body>
     <header style="text-align: center;">
-    <h1>BruhBook<img src="https://emoji.gg/assets/emoji/1590_bruh.png" width="32px" height="32px" alt="bruh logo"></h1>
+    
+    <%= link_to root_path do %>
+      <%= image_tag("bruh.png", size: "32x32") %>
+    <% end %>
+    <h1>BruhBook</h1>
     <h3>The only place to keep it real</h3>
+    
+    <%# <img src="https://emoji.gg/assets/emoji/1590_bruh.png" width="32px" height="32px" alt="bruh logo"> %>
+
     <div class="login">
     <% if !logged_in? %>
       <%= link_to "Log In", login_path %>
