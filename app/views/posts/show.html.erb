@@ -13,8 +13,8 @@
   </p>
 
   <% if @post.photo.attached? %>
-<image src="<%=(url_for(@post.photo))%>" width="200" height="200">
-<% end %>
+    <img class="post-img"  src="<%=(url_for(@post.photo))%>">
+  <% end %>
 
 
   <p><strong>Posted By: </strong>

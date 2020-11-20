@@ -5,7 +5,7 @@
         <div class="single-post" id="post-<%= post.id %>">
           <p><strong>What's going down:</strong> <%= post.text_content %></p>
           <% if post.photo.attached? %>
-            <image class="post-img" src="<%=(url_for(post.photo))%>">
+            <img class="post-img" src="<%=(url_for(post.photo))%>">
           <% end %>
           <p><strong>Pic:</strong> <%= post.img_url %></p>
           <p><strong>Bruh:</strong>
