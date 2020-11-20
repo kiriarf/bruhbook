@@ -68,15 +68,34 @@ label {
 header {
   text-align: center;
   display: grid;
-  grid-template-columns: 10% 80% 10%;
-    h1, h3 {
+  grid-template-columns: 15% auto 15%;
+
+  border: 3px solid black;
+    h1{
       grid-column: 2 / 3;
+      grid-row: 1 / 2;
+      transform: rotate(11deg);
+    }
+    img {
+      border-radius: 50%;
+      width: 32px;
+    }
+    h3{
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+      transform: rotate(-6deg);
     }
     .login {
       grid-column: 3 / 4;
       grid-row: 1 / 2;
       align-self: center;
       justify-self: center;
+    }
+    .log-out {
+      align-self: center;
+      justify-self: center;
+      grid-column: 3 / 4;
+      grid-row: 2 / 3;
     }
 
 }
@@ -93,16 +112,9 @@ header {
 footer {
   text-align: center;
   position: absolute;
-  bottom: 0;
+  overflow:hidden;
+  bottom:0;
   width: 100%;
   padding: 2%;
-  display: block; }
-
-.single-post {
-  margin: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 40%;
-  border: 2px solid black;
-  background-color: rgba(255, 255, 255, 0.5);
 }
+

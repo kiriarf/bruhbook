@@ -1,12 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <div class="single-post">
-
-  <p><strong>Text: </strong>
+  
+  <p>
+    <h4> What's going down:</h4>
     <%= @post.text_content %>
   </p>
 
-  <p><strong>Picture:</strong>
+  <p>
+    <h4>Pic:<h4>
     <%= @post.img_url %>
   </p>
 
@@ -19,8 +21,9 @@
   <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
   <p><%= @post.bullshits.count %> <%= (@post.bullshits.count) == 1 ? 'Bullshit' : 'Bullshits bruh!!!'%></p>
 
-  <%= button_to 'Yes Bruh', post_likes_path(@post), method: :post %>
-  <%= button_to 'Bullshit', post_bullshits_path(@post), method: :post %>
-
+  <%= button_to '😂', post_likes_path(@post), method: :post %>
+  <%= button_to '🐃💩', post_bullshits_path(@post), method: :post %>
+      
   <%= link_to 'Edit', edit_post_path(@post) %>
 </div>
+

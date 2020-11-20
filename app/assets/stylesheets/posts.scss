@@ -8,3 +8,23 @@
       width: 32%
     }
 }
+
+.single-post {
+  margin: 20px auto ;
+  width: 40%;
+  border: 2px solid black;
+  background-color: rgba(255, 255, 255, 0.5);
+  p{
+    word-wrap: break-word;
+  }
+  input {
+    margin: 2px;
+  }
+}
+
+// .time-line{
+//   margin: 0 auto;
+//   border: 2px solid black;
+//   background-color: rgba(255, 255, 255, 0.5);
+//   width: 50%;
+// }
