@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2020_11_18_173347) do
+  enable_extension "plpgsql"
 
   create_table "bullshits", force: :cascade do |t|
     t.integer "post_id", null: false
