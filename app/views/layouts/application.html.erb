@@ -10,12 +10,10 @@
 
   <body>
     
-    <header style="text-align: center;">
-    
-      <%= link_to root_path do %>
-        <%= image_tag("bruh.png", size: "32x32") %>
-      <% end %>
-      <h1>BruhBook</h1>
+    <header>
+        <h1>BruhBook <%= link_to root_path do %>
+          <span><%= image_tag("bruh.png") %></span>
+        <% end %></h1>
       <h3>The only place to keep it real</h3>
 
       <div class="login">

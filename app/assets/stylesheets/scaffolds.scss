@@ -68,9 +68,22 @@ label {
 header {
   text-align: center;
   display: grid;
-  grid-template-columns: 10% 80% 10%;
-    h1, h3 {
+  grid-template-columns: 15% auto 15%;
+
+  border: 3px solid black;
+    h1{
       grid-column: 2 / 3;
+      grid-row: 1 / 2;
+      transform: rotate(11deg);
+    }
+    img {
+      border-radius: 50%;
+      width: 32px;
+    }
+    h3{
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+      transform: rotate(-6deg);
     }
     .login {
       grid-column: 3 / 4;
@@ -78,6 +91,13 @@ header {
       align-self: center;
       justify-self: center;
     }
+    .log-out {
+      align-self: center;
+      justify-self: center;
+      grid-column: 3 / 4;
+      grid-row: 2 / 3;
+    }
+
 
 }
 .container {
