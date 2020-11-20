@@ -1,23 +1,26 @@
-<div id="all-posts">
-  <% @posts.each do |post| %>
-      <div class="single-post" id="post-<%= post.id %>">
-        <p>Text: <%= post.text_content %></p>
-        <p>Picture: <%= post.img_url %></p>
-        <p>Posted By: 
-        <% user = User.find(post.user_id)%>
-        <%= user.name %></p>
-        <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Yes Bruh' : 'Yes Bruhs'%>
-        <%= post.bullshits.count %> <%= (post.bullshits.count) == 1 ? 'Bullshit' : 'Bullshits'%></p>
-        <p>
-        <%= link_to 'Open', post %>
-        <% if current_user.id === post.user_id %>
-          <%= link_to 'Edit', edit_post_path(post) %>
-          <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-        <% end %>
+<h1>Time line</h1>
+<div class="time-line">
+  <div id="all-posts">
+    <% @posts.each do |post| %>
+        <div class="single-post" id="post-<%= post.id %>">
+          <p><strong>What's going down:</strong> <%= post.text_content %></p>
+          <p><strong>Pic:</strong> <%= post.img_url %></p>
+          <p><strong>Bruh:</strong> 
+          <% user = User.find(post.user_id)%>
+          <%= user.name %></p>
+          <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Yes Bruh' : 'Yes Bruhs'%>
+          <%= post.bullshits.count %> <%= (post.bullshits.count) == 1 ? 'Bullshit' : 'Bullshits'%></p>
+          <p>
+          <%= link_to 'Open', post %>
+          <% if current_user.id === post.user_id %>
+            <%= link_to 'Edit', edit_post_path(post) %>
+            <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          <% end %>
 
-        <%= button_to '😂', post_likes_path(post), method: :post %>
-        <%= button_to '🐃💩', post_bullshits_path(post), method: :post %>
-      </div>
-  <% end %>
+          <%= button_to '😂', post_likes_path(post), method: :post %>
+          <%= button_to '🐃💩', post_bullshits_path(post), method: :post %>
+        </div>
+    <% end %>
+  </div>
 </div>
 
