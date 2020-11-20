@@ -85,13 +85,13 @@ header {
       grid-row: 2 / 3;
       transform: rotate(-6deg);
     }
-    .login {
+    .logged-out {
       grid-column: 3 / 4;
       grid-row: 1 / 2;
       align-self: center;
       justify-self: center;
     }
-    .log-out {
+    .logged-in {
       align-self: center;
       justify-self: center;
       grid-column: 3 / 4;
