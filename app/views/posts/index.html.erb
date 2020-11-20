@@ -4,7 +4,7 @@
 
     <% @posts.each do |post| %>
         <p>Text content <%= post.text_content %></p>
-        <p>Pics <%= post.img_url %></p>
+        <p>Pic <%= post.img_url %></p>
         <p>Bullshit bruhs <%= post.bullshit_bruhs %></p>
         <p>user <%= post.user_id %></p>
         <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Yes Bruh' : 'Yes Bruhs'%></p>
@@ -16,13 +16,5 @@
         </p>
       </tr>
     <% end %>
-
-<%# 
-    <%= image_tag("makersNews.jpeg") %> 
-    <%# <%= image_tag("bruh_pic.gif") %>
-
-
-<br>
-
 
 <%= link_to 'New Post', new_post_path %>
