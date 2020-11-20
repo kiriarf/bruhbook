@@ -16,13 +16,14 @@
   </div>
 
   <div class="field">
-    <p>Add Photo</p>
-    <%= form.text_field :img_url %>
+    <%= form.label "Add Photo" %>
+    <%= form.file_field :photo %>
   </div>
+
 
   <div class="hidden-field">
     <%= hidden_field_tag "post[user_id]", current_user.id %>
-  </div> 
+  </div>
 
   <div class="actions">
     <%= form.submit %>
