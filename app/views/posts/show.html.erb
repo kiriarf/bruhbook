@@ -19,7 +19,8 @@
 
   <p><strong>Posted By: </strong>
     <% user = User.find(@post.user_id)%>
-    <%= user.name %>
+    <%= link_to user.name, user_path(user)%>
+    <%# <%= user.name %> 
   </p>
 
   <p><strong>Posted At: </strong> <%= @post.created_at %></p>
