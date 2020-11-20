@@ -7,7 +7,6 @@
         <h4>What's going down:</h4>
         <p><%= post.text_content %></p>
         <h4>Pic:</h4><%= post.img_url %>
-        <%# do we need this??? <p>Bullshit bruhs:<%= post.bullshit_bruhs %>
         <h4>Bruh:</h4> <%= post.user_id %>
         <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Yes Bruh' : 'Yes Bruhs'%></p>
         <p><%= post.bullshits.count %> <%= (post.bullshits.count) == 1 ? 'Bullshit' : 'Bullshits'%></p>
