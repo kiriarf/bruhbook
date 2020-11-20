@@ -8,9 +8,10 @@
             <image class="post-img" src="<%=(url_for(post.photo))%>" width="200" height="200">
           <% end %>
           <p><strong>Pic:</strong> <%= post.img_url %></p>
-          <p><strong>Bruh:</strong>
+          <p><strong>Posted By: </strong>
           <% user = User.find(post.user_id)%>
           <%= user.name %></p>
+          <p><strong>Posted At: </strong> <%= post.created_at %></p>
           <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Yes Bruh' : 'Yes Bruhs'%>
           <%= post.bullshits.count %> <%= (post.bullshits.count) == 1 ? 'Bullshit' : 'Bullshits'%></p>
           <p>

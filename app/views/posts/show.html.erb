@@ -8,7 +8,7 @@
   </p>
 
   <p>
-    <h4>Pic:<h4>
+    <h4>Pic:</h4>
     <%= @post.img_url %>
   </p>
 
@@ -21,6 +21,8 @@
     <% user = User.find(@post.user_id)%>
     <%= user.name %>
   </p>
+
+  <p><strong>Posted At: </strong> <%= @post.created_at %></p>
 
   <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
   <p><%= @post.bullshits.count %> <%= (@post.bullshits.count) == 1 ? 'Bullshit' : 'Bullshits bruh!!!'%></p>
