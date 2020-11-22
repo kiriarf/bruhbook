@@ -119,13 +119,16 @@ header {
 }
 
 .right-content {
-  grid-column: 1 / 4;
-  grid-row: 3 / 4;
+  background-image: url(singles-img.jpg);
+  background-size: 100%;
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
 }
 
 footer {
   grid-column: 1 / 4;
   grid-row: 3 / 4;
+  border: 3px solid black;
   text-align: center;
   padding: 2%;
 }
