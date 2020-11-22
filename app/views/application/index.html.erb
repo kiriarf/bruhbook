@@ -11,7 +11,7 @@
           </div>
           <% end %>
           <%= post.img_url %>
-          
+         
           <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Yes Bruh' : 'Yes Bruhs'%>
           <%= post.bullshits.count %> <%= (post.bullshits.count) == 1 ? 'Bullshit' : 'Bullshits'%></p>
           <p>
@@ -21,8 +21,10 @@
             <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
           <% end %>
 
-          <%= button_to '😂', post_likes_path(post), method: :post %>
-          <%= button_to '🐃💩', post_bullshits_path(post), method: :post %>
+          <% if logged_in? %>
+            <%= button_to '😂', post_likes_path(post), method: :post %>
+            <%= button_to '🐃💩', post_bullshits_path(post), method: :post %>
+          <% end %>
         </div>
     <% end %>
   </div>
