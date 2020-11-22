@@ -9,6 +9,10 @@
     }
 }
 
+#all-posts:last-child  {
+  margin-bottom: 2%;
+}
+
 .single-post {
   margin: 1px auto ;
   width: 50%;
@@ -20,7 +24,11 @@
   input {
     margin: 2px;
   }
+  :last-child {
+    margin-bottom: 2%;
+  }
 }
+
 
 .photo-container {
   width: 100%;
