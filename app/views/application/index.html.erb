@@ -4,9 +4,11 @@
         <div class="single-post" id="post-<%= post.id %>">
           <p><strong>What's going down:</strong> <%= post.text_content %></p>
           <% if post.photo.attached? %>
+          <div class="photo-container">
             <img class="photo-img" src="<%=(url_for(post.photo))%>">
+          </div>
           <% end %>
-          <p><strong>Pic:</strong> <%= post.img_url %></p>
+          <%= post.img_url %></p>
           <p><strong>Bruh:</strong>
           <% user = User.find(post.user_id)%>
           <%= user.name %></p>
