@@ -72,7 +72,7 @@ label {
 .wrapper {
   margin: 0;
   display: grid;
-  grid-template-columns: 15% auto 15%;
+  grid-template-columns: 0 auto 15%;
   grid-template-rows: 17% auto 5%;
   height: 100vh;
   width: auto;
@@ -111,16 +111,13 @@ header {
     }
 }
 
-.left-content {
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-}
-
 .main-content {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
   text-align: center;
   width: 100%;
+  display: grid;
+  grid-template-columns: 10% auto;
 }
 
 .right-content {
@@ -134,7 +131,7 @@ footer {
   grid-column: 1 / 4;
   grid-row: 3 / 4;
   border: 3px solid black;
-  text-align: center;
+  text-align: end;
   padding: 1%;
 }
 
