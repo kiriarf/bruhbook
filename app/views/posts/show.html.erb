@@ -1,37 +1,40 @@
-<p id="notice"><%= notice %></p>
+<div id="all-posts">
+  <p id="notice"><%= notice %></p>
 
-<div class="single-post">
+  <div class="single-post">
 
-  <p>
-    <h4> What's going down:</h4>
-    <%= @post.text_content %>
-  </p>
+    <p>
+      <h4> What's going down:</h4>
+      <%= @post.text_content %>
+    </p>
 
-  <p>
-    <h4>Pic:</h4>
-    <%= @post.img_url %>
-  </p>
+    <p>
+      <h4>Pic:</h4>
+      <%= @post.img_url %>
+    </p>
 
-  <% if @post.photo.attached? %>
-    <image src="<%=(url_for(@post.photo))%>" width="200" height="200">
-  <% end %>
+    <% if @post.photo.attached? %>
+      <img class="photo-img" src="<%=(url_for(@post.photo))%>">
+    <% end %>
 
 
-  <p><strong>Posted By: </strong>
-    <% user = User.find(@post.user_id)%>
-    <%= link_to user.name, user_path(user)%>
-    <%# <%= user.name %> 
-  </p>
+    <p><strong>Posted By: </strong>
+      <% user = User.find(@post.user_id)%>
+      <%= link_to user.name, user_path(user)%>
+      <%# <%= user.name %> 
+    </p>
 
-  <p><strong>Posted At: </strong> <%= @post.created_at %></p>
+    <p><strong>Posted At: </strong> <%= @post.created_at %></p>
 
-  <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-  <p><%= @post.bullshits.count %> <%= (@post.bullshits.count) == 1 ? 'Bullshit' : 'Bullshits bruh!!!'%></p>
+    <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+    <p><%= @post.bullshits.count %> <%= (@post.bullshits.count) == 1 ? 'Bullshit' : 'Bullshits bruh!!!'%></p>
 
-  <% if logged_in? %>
-    <%= button_to '😂', post_likes_path(@post), method: :post %>
-    <%= button_to '🐃💩', post_bullshits_path(@post), method: :post %>
-  <% end %>
+    <% if logged_in? %>
+      <%= button_to '😂', post_likes_path(@post), method: :post %>
+      <%= button_to '🐃💩', post_bullshits_path(@post), method: :post %>
+    <% end %>
 
-  <%= link_to 'Edit', edit_post_path(@post) %>
+    <%= link_to 'Edit', edit_post_path(@post) %>
+  </div>
+  
 </div>
