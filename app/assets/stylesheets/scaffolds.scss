@@ -73,45 +73,33 @@ label {
   margin: 0;
   display: grid;
   grid-template-columns: 0 auto 15%;
-  grid-template-rows: 17% auto 5%;
+  grid-template-rows: 10% auto 5%;
   height: 100vh;
   width: auto;
 }
 
 header {
+  background-color: #4a76a8;
   grid-column: 1 / 4;
   grid-row: 1 / 2;
-  text-align: center;
-  display: grid;
-  grid-template-columns: 15% auto 15%;
-  border: 3px solid black;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  // border: 3px solid black;
     h1{
-      grid-column: 2 / 3;
-      grid-row: 1 / 2;
+      font-size: 2.5vw;
+      margin-left: 1vw;
     }
     img {
+      margin-left: 1.5vw;
       border-radius: 50%;
       width: 32px;
-    }
-    h3{
-      grid-column: 2 / 3;
-      grid-row: 2 / 3;
-    }
-    .logged-out {
-      grid-column: 3 / 4;
-      grid-row: 1 / 2;
-      align-self: center;
-      justify-self: center;
-    }
-    .logged-in {
-      align-self: center;
-      justify-self: center;
-      grid-column: 3 / 4;
-      grid-row: 2 / 3;
+
     }
 }
 
 .main-content {
+  background-color: #edeef0;
   grid-column: 2 / 3;
   grid-row: 2 / 3;
   text-align: center;
@@ -128,9 +116,9 @@ header {
 }
 
 footer {
+  background-color: #4a76a8;
   grid-column: 1 / 4;
   grid-row: 3 / 4;
-  border: 3px solid black;
   text-align: end;
   padding: 1%;
 }
