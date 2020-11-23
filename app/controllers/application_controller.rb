@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
     skip_before_action :login_required, :only => [:index]
 
     def index
-      @time_now = Time.now
       @posts = Post.all
     end
   

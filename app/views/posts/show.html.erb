@@ -1,40 +1,34 @@
-<div id="all-posts">
-  <p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 
-  <div class="single-post">
-
-    <p>
-      <h4> What's going down:</h4>
-      <%= @post.text_content %>
-    </p>
-
-    <p>
-      <h4>Pic:</h4>
-      <%= @post.img_url %>
-    </p>
-
-    <% if @post.photo.attached? %>
-      <img class="photo-img" src="<%=(url_for(@post.photo))%>">
-    <% end %>
-
-
-    <p><strong>Posted By: </strong>
-      <% user = User.find(@post.user_id)%>
-      <%= link_to user.name, user_path(user)%>
-      <%# <%= user.name %> 
-    </p>
-
-    <p><strong>Posted At: </strong> <%= @post.created_at %></p>
-
-    <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-    <p><%= @post.bullshits.count %> <%= (@post.bullshits.count) == 1 ? 'Bullshit' : 'Bullshits bruh!!!'%></p>
-
-    <% if logged_in? %>
-      <%= button_to '😂', post_likes_path(@post), method: :post %>
-      <%= button_to '🐃💩', post_bullshits_path(@post), method: :post %>
-    <% end %>
-
-    <%= link_to 'Edit', edit_post_path(@post) %>
+<div class="single-post" id="individual-post-page">
+  <div class="name-time-text">
+    <h4><% user = User.find(@post.user_id)%>
+    <%= link_to user.name, user_path(user) %> (<%= timestamp(@post.created_at) %>):</h4>
+    <%= @post.text_content %>
   </div>
+  <% if @post.photo.attached? %>
+  <div class="photo-container">
+    <img class="photo-img" src="<%=(url_for(@post.photo))%>">
+  </div>
+  <% end %>
+  <%= @post.img_url %>
   
+  <div class="post-btns">
+    <%= button_to '💬', class: 'post-btn' %>
+    <%= button_to '📖', @post, method: :get, class: 'post-btn' %>
+    <% if current_user && current_user.id === @post.user_id %>
+      <%= button_to '✏️', edit_post_path(@post), method: :get, class: 'post-btn' %>
+      <%= button_to '❌', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'post-btn' %></p>
+    <% end %>
+    <% if logged_in? %>
+      <%= button_to '😂', post_likes_path(@post), method: :post, class: 'post-btn' %>
+      <span><%= @post.likes.count %></span>
+      <%= button_to '💩', post_bullshits_path(@post), method: :post, class: 'post-btn' %>
+      <span><%= @post.bullshits.count %></span>
+    <% end %>      
+  </div>
 </div>
+
+  
+  
+
