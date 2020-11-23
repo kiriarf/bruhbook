@@ -1,6 +1,5 @@
-<p id="notice"><%= notice %></p>
-
 <div class="single-post" id="individual-post-page">
+  <p id="notice"><%= notice %></p>
   <div class="name-time-text">
     <h4><% user = User.find(@post.user_id)%>
     <%= link_to user.name, user_path(user) %> (<%= timestamp(@post.created_at) %>):</h4>
@@ -15,7 +14,6 @@
   
   <div class="post-btns">
     <%= button_to '💬', class: 'post-btn' %>
-    <%= button_to '📖', @post, method: :get, class: 'post-btn' %>
     <% if current_user && current_user.id === @post.user_id %>
       <%= button_to '✏️', edit_post_path(@post), method: :get, class: 'post-btn' %>
       <%= button_to '❌', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'post-btn' %></p>

@@ -15,31 +15,24 @@
             <span><%= image_tag("bruh.png") %></span>
           <% end %></h1>
         <h3>The only place to keep it real</h3>
-
-        <div class="logged-out">
-          <% if !logged_in? %>
-            <%= link_to "Log In", login_path %>
-          <%= link_to "Sign Up", signup_path %>
-        </div>
-        <div class="logged-in">
-          <% else %>
-            <h2>What' up, <%= current_user.name %></h2>
-            <%= link_to "My Account", user_path(current_user) %>
-            <%= link_to 'New Post', new_post_path %>
-            <%= link_to "Log Out", logout_path, method: :delete %>
-          <%end%>
-        </div>
       </header>
 
       
 
       <section class="main-content">
         <section class="left-menu">
-          <%= button_to "Feed", root_path, method: :get %>
-          <%= button_to "My Account", user_path(current_user), method: :get %>
-          <%= button_to 'New Post', new_post_path, method: :get %>
-          <%= button_to 'My Bruhs', root_path, method: :get %>
-          <%= button_to 'New Post', root_path, method: :get %>
+          <% if logged_in? %>
+            <h2>What' up, <%= current_user.name %></h2>
+            <%= button_to "Feed", root_path, method: :get %>
+            <%= button_to "My Account", user_path(current_user), method: :get %>
+            <%= button_to 'New Post', new_post_path, method: :get %>
+            <%= button_to 'My Bruhs', root_path, method: :get %>
+            <%= button_to 'Test Item', root_path, method: :get %>
+            <%= button_to "Log Out", logout_path, method: :delete %>
+          <% else %>
+            <%= button_to "Log In", login_path, method: :get%>
+            <%= button_to "Sign Up", signup_path, method: :get%>
+          <% end %>
         </section>
         <%= yield %>
       </section>
