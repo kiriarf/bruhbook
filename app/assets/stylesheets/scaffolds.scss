@@ -97,13 +97,13 @@ header {
       grid-column: 2 / 3;
       grid-row: 2 / 3;
     }
-    .login {
+    .logged-out {
       grid-column: 3 / 4;
       grid-row: 1 / 2;
       align-self: center;
       justify-self: center;
     }
-    .log-out {
+    .logged-in {
       align-self: center;
       justify-self: center;
       grid-column: 3 / 4;
