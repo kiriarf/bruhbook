@@ -31,7 +31,16 @@
         </div>
       </header>
 
+      
+
       <section class="main-content">
+        <section class="left-menu">
+          <%= button_to "Feed", root_path, method: :get %>
+          <%= button_to "My Account", user_path(current_user), method: :get %>
+          <%= button_to 'New Post', new_post_path, method: :get %>
+          <%= button_to 'My Bruhs', root_path, method: :get %>
+          <%= button_to 'New Post', root_path, method: :get %>
+        </section>
         <%= yield %>
       </section>
 

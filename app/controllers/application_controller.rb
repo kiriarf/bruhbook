@@ -4,6 +4,13 @@ class ApplicationController < ActionController::Base
     skip_before_action :login_required, :only => [:index]
 
     def index
+      #add later:
+      #if not logged in -> only show /all
+      # if logged in -> have options to show /all or friends' posts
+      #e.g. -> @all_posts = Post.all
+      #@my_bruhs = Friendships.find_by_user_id(current user)
+      #@myBruhs each do
+      #@my_posts = Post.find_by_user_id(my bruh)
       @posts = Post.all
     end
   
