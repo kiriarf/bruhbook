@@ -1,21 +1,25 @@
-<p id="notice"><%= notice %></p>
+<div id="all-posts">
+    <p id="notice"><%= notice %></p>
 
-<h1>What da Bruh's are upto!</h1>
-  
-    <% @posts.each do |post| %>
-    <div class="single-post">
-        <h4>What's going down:</h4>
-        <p><%= post.text_content %></p>
-        <h4>Pic:</h4><%= post.img_url %>
-        <h4>Bruh:</h4> <%= post.user_id %>
-        <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Yes Bruh' : 'Yes Bruhs'%></p>
-        <p><%= post.bullshits.count %> <%= (post.bullshits.count) == 1 ? 'Bullshit' : 'Bullshits'%></p>
-        <p>
-        <%= link_to 'Show', post %>
-        <%= link_to 'Edit', edit_post_path(post) %>
-        <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </p>
-     </div>
-    <% end %>
+    <h1>What da Bruh's are upto!</h1>
+    
+        <% @posts.each do |post| %>
+        <div class="single-post">
+            <h4>What's going down:</h4>
+            <p><%= post.text_content %></p>
+            <h4>Pic:</h4><%= post.img_url %>
+            <h4>Bruh:</h4> <%= post.user_id %>
+            <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Yes Bruh' : 'Yes Bruhs'%></p>
+            <p><%= post.bullshits.count %> <%= (post.bullshits.count) == 1 ? 'Bullshit' : 'Bullshits'%></p>
+            <p>
+            <%= link_to 'Show', post %>
+            <%= link_to 'Edit', edit_post_path(post) %>
+            <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </p>
+        </div>
+        <% end %>
 
-<%= link_to 'New Post', new_post_path %>
+    <%= link_to 'New Post', new_post_path %>
+
+
+</div>
