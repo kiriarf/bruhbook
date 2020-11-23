@@ -2,9 +2,11 @@
   <h1>Time line</h1>
   <% @posts.each do |post| %>
       <div class="single-post" id="post-<%= post.id %>">
-        <h4><% user = User.find(post.user_id)%>
-        <%= user.name %> says:</h4>
-        <%= post.text_content %>
+        <div class="name-time-text">
+          <h4><% user = User.find(post.user_id)%>
+          <%= user.name %> (<%= timestamp(post.created_at) %>):</h4><br>
+          <%= post.text_content %>
+        </div>
         <% if post.photo.attached? %>
         <div class="photo-container">
           <img class="photo-img" src="<%=(url_for(post.photo))%>">
@@ -12,17 +14,16 @@
         <% end %>
         <%= post.img_url %>
         
-        <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Yes Bruh' : 'Yes Bruhs'%>
-        <%= post.bullshits.count %> <%= (post.bullshits.count) == 1 ? 'Bullshit' : 'Bullshits'%></p>
-        <p>
-        <%= link_to 'Open', post %>
-        <% if current_user && current_user.id === post.user_id %>
-          <%= link_to 'Edit', edit_post_path(post) %>
-          <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-        <% end %>
-        <div class="like-btns">
-          <%= button_to '😂', post_likes_path(post), method: :post %>
-          <%= button_to '🐃💩', post_bullshits_path(post), method: :post %>
+        <div class="post-btns">
+          <%= button_to '📖', post, method: :get, class: 'post-btn' %>
+          <% if current_user && current_user.id === post.user_id %>
+            <%= button_to '✏️', edit_post_path(post), method: :get, class: 'post-btn' %>
+            <%= button_to '❌', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'post-btn' %></p>
+          <% end %>
+          <%= button_to '😂', post_likes_path(post), method: :post, class: 'post-btn' %>
+          <span><%= post.likes.count %></span>
+          <%= button_to '💩', post_bullshits_path(post), method: :post, class: 'post-btn' %>
+          <span><%= post.bullshits.count %></span>      
         </div>
       </div>
   <% end %>
