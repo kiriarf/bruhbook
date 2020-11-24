@@ -74,6 +74,12 @@
   }
 }
 
+.right-contnent {
+  img {
+    max-width: 100%
+  }
+}
+
 .photo-container {
   width: 100%;
   margin-top: 6%;
@@ -99,20 +105,9 @@
     min-height: 2.3em;
   }
 
-
-
-  // .like-count {
-
-  // }
-
   :last-child {
     margin-right: 4%;
   }
 }
 
 
-
-// .post-btn {
-//   min-width: 20px;
-//   // max-height: 1px;
-// }
