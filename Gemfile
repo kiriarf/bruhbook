@@ -24,6 +24,8 @@ gem 'bcrypt', '~> 3.1.7'
 #travis for CI/CD
 gem 'travis'
 
+gem 'rack-cors', require: 'rack/cors'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

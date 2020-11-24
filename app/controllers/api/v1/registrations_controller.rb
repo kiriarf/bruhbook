@@ -21,7 +21,7 @@ class Api::V1::RegistrationsController < ApplicationController
   private  
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name, :dob, :email, :email_confirmation, :password, :password_confirmation)
+      params.require(:user).permit(:name, :dob, :email, :password)
     end
 
 end
